@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container is-fluid">
+  <a href="{% url 'contents:contents' %}">
+    <img class="box_size" src="{% static 'images/box_image.png' %}" alt="뽑기 상자">
+  </a>
+</div>
+{% endblock %}
