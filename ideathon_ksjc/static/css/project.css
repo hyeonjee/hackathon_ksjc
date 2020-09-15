@@ -1,0 +1,13 @@
+.box_size{
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+}
+
+.content_ps{
+    text-align: center;
+    margin-top: 150px;
+}
