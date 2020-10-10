@@ -24,4 +24,6 @@ urlpatterns = [
     path('', views.landing, name="landing"),
     path('contents/', include('contents.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 

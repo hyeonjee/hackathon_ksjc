@@ -9,6 +9,7 @@ class ContentAdmin(admin.ModelAdmin):
         'place',
         'doing',
         'kinds',
+        'photo',
         'created_at',
         'updated_at',
     )
