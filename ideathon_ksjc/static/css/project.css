@@ -3,12 +3,9 @@
 li{list-style :none;}
 a{text-decoration : none;}
 
-.wrap{
-    width: 500px;
-    margin: 50px auto;
-}
+/* Legacy */
 
-.box_size{
+/*.box_size{
     width: 500px;
     height: 500px;
     display: block;
@@ -36,5 +33,4 @@ a{text-decoration : none;}
     width: 500px;
     margin:20px auto 30px;
     padding-left:0px;
-}
- 
+} */

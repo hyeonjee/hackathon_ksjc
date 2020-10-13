@@ -2,108 +2,54 @@
 {% load static %}
 {% block content %}
 
-<div class="wrap">
+<!-- margin-top -->
 
-    <div class="header">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-        <div class="level">
+<!-- card -->
 
-            <div class="level-left">
-                <div class="level-item">
-                    <a href="#"> <image src= "{% static 'images/home.png' %}" class="image is-24x24"></a>
-                </div>
-            </div>
-      
-            <div class="level-right">
-                <div class="level-item">
-                    <a href="#"><image src="{% static 'images/share.png' %}" class="image is-24x24" alt="공유하기"></a>
-                </div>
-            </div>
-      
-          </div>
-
+<div class="container is-max-desktop">
+  <div class="card" style='width:400px; margin:0 auto;'>
+    <div class="card-image">
+      <figure class="image">
+        <img src="{{ contents.img }}" alt="Attraction image">
+      </figure>
     </div>
-
-    
-    <div>
-        {% for post in posts %}
-          <div class="box box_size">
-            <div class="photo_size">
-              {% if post.photo %}
-                <img src = "{{ post.photo }}" alt="" height="60%" width="60%">
-              {% endif %}
-            </div>
-            <div class="content_ps">
-                <h3> {{ post.content }} </h3>
-            </div>
-          </div>
-        {% endfor %}
-    </div>
-
-
-    <div class="comment_input">
-
-        <div class=""field is-horizontal"">
-            <form class="columns comment_size" action="#" method="POST" enctype="multipart/form-data>
-                {% csrf_token %}
-                <div class="column is-four-fifths">
-                  <textarea class="input is-medium" type="text" placeholder="댓글을 입력하세요"></textarea>
-                </div>
-
-                <div class="column" >
-                  <input type="submit" class="button is-danger is-rounded is-medium" value="작성">
-                </div>
-                
-            </form>
-
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4">{{ contents.name }}</p>
+          <p class="subtitle is-6">{{ contents.place }}</p>
         </div>
+      </div>
+      <div class="content">
+        {{ contents.explanation }}
+      </div>
     </div>
-
-
-    <div class="box">
-          <article class="media">
-            <div class="media-left">
-              <figure class="image is-64x64 is-rounded">
-                <img src="{%  static 'images/profile.png' %}" alt="profie image">
-              </figure>
-            </div>
-
-            <div class="media-content">
-
-              <div class="content">
-                <p>
-                  <strong>익명</strong>  
-                  <small>{{ comment.created_at }}</small>
-                  <br>
-                <p>{{ comment.content }}</p>
-                </p>
-              </div>
-
-              <nav class="level is-mobile">
-                <div class="level-left">
-
-                  <a class="level-item" aria-label="reply">
-                    <span class="icon is-small">
-                      <i class="far fa-thumbs-up" aria-hidden="true"></i>
-                    </span>
-                  </a>
-
-                  <a class="level-item" aria-label="답글">
-                    답글
-                  </a>
-
-                  <a class="level-item" aria-label="신고" href="#" style=color:crimson>
-                    신고
-                  </a>
-
-                </div>
-              </nav>
-              
-            </div>
-          </article>
-          
-   </div>
-    
+  </div>
 </div>
+
+<!-- floating button -->
+
+<a href="{% url 'contents:contents' %}">
+  <button class="button is-warning floating" 
+          style="position:fixed;
+                width:60px;
+                height:60px;
+                bottom:40px;
+                right:40px;
+                border-radius:50px;
+                text-align:center;
+                box-shadow: 2px 2px 3px #999;">
+      <img src="{% static 'images/reload.svg' %}">
+    </button>
+</a>
 
 {% endblock %}
