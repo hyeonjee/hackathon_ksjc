@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+<!--style-->
 
 {% block content %}
 
@@ -16,14 +17,17 @@
 <br>
 <br>
 
-<!-- logo -->
-
+<!-- dd -->
 <div class="container is-max-desktop">
   <div style='width:400px; margin:0 auto;'>
     <a href="{% url 'contents:contents' %}">
-      <img class ="" src="{% static 'images/lotte.png' %}" alt="lotte" width="300px" height="300px">
+      <button class="btn" style="width: 60%; margin-top: 80%;margin-left: 20%;">넘어가아아아아아!</button> <!--이 부분 수정할 것: 버튼 디자인, 문구, 폰트 수정 & 중앙 정렬 제대로-->
+      <!-- <img class ="" src="{% static 'images/lotte.png' %}" alt="lotte" width="300px" height="300px"> -->
     </a>
   </div>
 </div>
+
+
+
 
 {% endblock %}

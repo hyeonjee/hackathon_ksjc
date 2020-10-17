@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+    <div class="about-info">
+        <h1 style="color: white; font-size: 45px; font-weight: 500; text-align: center; margin-top: 5%;">About</h1>
+        <p>저희는sfsdfsdfdfdsdsdfsdfdsfsdfsdfsd이러이러한 목표로 이러이러한 서비스를 편리하게 제공하기 위헤 이러이러한..................</p>
+        <h1 style="color: white; font-size: 40px; font-weight: 500; text-align: center; margin-top: 70%;">Developers</h1>
+        <p>강협 신주연 장영동 최현지</p>
+    </div>
+
+    <div class="about-photo">
+        <img src="{% static 'images/character.png'%}" style="height: 5%; width: 25%; margin-left: 18%; margin-top: 3.5%; position: relative;">
+    </div>
+{% endblock %}
