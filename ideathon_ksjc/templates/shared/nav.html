@@ -1,0 +1,26 @@
+{% load static %}
+<div class="menu-outer">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav>
+        <ul style="margin-left: 10%;">
+            <li style="margin-top: 10%;"><a href="{% url 'landing' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contents:contents' %}">Activities</a></li>
+            <li><a href="https://adventure.lotteworld.com/kor/main/index.do"><img src="{% static 'images/lotte_logo.png'%}" width="7%" style="margin-top: 10%;"></a></li>
+        </ul>
+        <img src="{% static 'images/character.png'%}" style="height: 5%; width: 25%; margin-left: 18%; margin-top: 3.5%; position: relative;">
+        
+        
+    </nav>
+</div>
+<a class="menu-close" onClick="return true">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</a>
+
