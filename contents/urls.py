@@ -6,3 +6,6 @@ app_name = "contents"
 urlpatterns = [
     path('', show, name="contents"),
 ]
+
+
+
