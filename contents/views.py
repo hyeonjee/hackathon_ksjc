@@ -28,11 +28,17 @@ def show(request):
         
     return render(request, 'contents/response.html', context)
 
-# 이거 설마 Content가 없어서 그런건가, 그 Content모델이 있기는 해도 api로 불러온 data만 있지 Content에 저장은 안 되어 있잖아 그래서 그런건가? comment에 저장할 때는 content 객체의 정보가 필요한데 그걸 우리가 임의로
-# 그냥 data 불러온걸 넣어준거잖아
-# 만약 comment를 content 없이 넣고 싶으면 comment 앱을 하나 새로 파서 거기에 넣는게 좋은 것 같은데
-# 만약 content에서도 사용하고 싶으면 show.html에서 데이터를 불러올 때, 데이터를 Content 모델에 다 저장해줘야 함. ㅋㅋㅋㅋㅋ 그러면 앱 만들어서 한 번 해 봐
-# 우선 해봐 ㄲ, 해보고 막히면 도와줄게 라이브쉐어는 안 꺼놓고 다른거 하고 있을테니까 필요하면 카톡으로 연락 ㄱ
-#있을때도 이랬는데... 그건 아니지 않을까?? Content랑 따로 움직이니까 ㅇㅇ 그치그치 Content는 일단 지웠어  holly fuck 그러면 일단 content에 있는 model은 필요없게 되는거네?
-
-#아 그러면 앱을 따로 만드는게 뭔가 더 쉬울거 같다 떙큐때윸넹넹
+def create_comment(request, content_id):
+    if request.method == "POST":
+        content = ast.literal_eval(request.POST.get('content'))
+        message = request.POST.get('message')
+        identity = content['identity'] 
+        # current_user = "익명"
+        # comment_content = request.POST.get('content')
+        # comment = Comment.objects.create(text=message)
+        context = {
+            'content': content,
+            'message': message,
+            'identity': identity,
+        }
+    return HttpResponse(json.dumps(context), content_type="application/json")

@@ -17,5 +17,4 @@ def create_comment(request, content_id):
             'message': message,
             'identity': identity,
         }
-        Comment.objects.create(message=message, identity=identity) #comment에 넣을려고 했는데 이 코드 넣으면 댓글입력이 앙대
     return HttpResponse(json.dumps(context), content_type="application/json")
