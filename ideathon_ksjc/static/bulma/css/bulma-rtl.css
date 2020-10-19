@@ -1866,7 +1866,7 @@ fieldset[disabled] .button {
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  . {
     max-width: 960px;
   }
 }
