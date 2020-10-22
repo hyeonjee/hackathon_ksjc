@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     #추가한 앱
     'contents',
+    'comments',
 ]
 
 MIDDLEWARE = [

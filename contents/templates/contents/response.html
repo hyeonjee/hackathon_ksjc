@@ -22,23 +22,34 @@
   <div class="card" style='width:400px; margin:0 auto;'>
     <div class="card-image">
       <figure class="image">
-        <img src="{{ contents.img }}" alt="Attraction image">
+        <img src="{{ img }}" alt="Attraction image">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{ contents.name }}</p>
-          <p class="subtitle is-6">{{ contents.place }}</p>
+          <p class="title is-4">{{ name }}</p>
+          <p class="subtitle is-6">{{ place }}</p>
         </div>
       </div>
       <div class="content">
-        {{ contents.explanation }}
+        {{ explanation }}
       </div>
     </div>
-  </div>
+    <!-- 댓글 -->    
+    <form action="#" method="POST">
+      {% csrf_token %}
+      <textarea id="comment-input-{{identity}}" class="form-control col-ll mr-2" name="content" placeholder="댓글 내용 입력"></textarea>
+      <input type="submit" data-token="{{ csrf_token }}" data-content-identity="{{ identity }}" data-content-object="{{ data }}" class="btn btn-primary create-comment-button" value="확인">
+    </form>
+    <div class="comment-list">
+      {% for comment in comments %}
+        <li>
+          {{ message }}
+        </li>
+      {% endfor %}
+    </div>  </div>
 </div>
-
 <!-- floating button -->
 
 <a href="{% url 'contents:contents' %}">
@@ -54,5 +65,7 @@
       <img src="{% static 'images/reload.svg' %}">
     </button>
 </a>
+
+
 
 {% endblock %}
