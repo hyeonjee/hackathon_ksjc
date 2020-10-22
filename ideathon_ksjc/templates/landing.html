@@ -2,28 +2,19 @@
 {% load static %}
 
 {% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Quicksand&display=swap" rel="stylesheet">
 
-<!-- margin-top -->
+  <div style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/images/festival.png') ; background-size:cover; background-position: center center; width:100vw; height:100vh; position:relative; ">
+    
+      <a href="{% url 'contents:contents' %}">
+        <button class="btn1 btn-lg" style="font-family: 'Open Sans', sans-serif;">Get started<i class="far fa-hand-point-up"></i></button>
+      </a>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<!-- logo -->
-
-<div class="container is-max-desktop">
-  <div style='width:400px; margin:0 auto;'>
-    <a href="{% url 'contents:contents' %}">
-      <img class ="" src="{% static 'images/lotte.png' %}" alt="lotte" width="300px" height="300px">
-    </a>
   </div>
-</div>
-
+  
 {% endblock %}
+
+
+<body>
+  
+ 
