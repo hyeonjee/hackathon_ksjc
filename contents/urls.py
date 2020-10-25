@@ -4,6 +4,6 @@ from .views import *
 app_name = "contents"
 
 urlpatterns = [
-    path('', show, name="contents"),
+    path('show/<int:id>', show, name="show"),
     path('', postComment, name="postComment"),
 ]
