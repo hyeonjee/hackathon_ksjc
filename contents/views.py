@@ -30,9 +30,9 @@ def show(request, id):
             'explanation':'대한민국의 국민이 되는 요건은 법률로 정한다. 모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.', #dump2
             'listVar':comments 
         }
-       
     return render(request, 'contents/response.html', content)
 
-def postComment(request):
-    '''TBD'''
 
+def postComment(request, id):
+    
+    return redirect("{% url 'contents:show' id %}")

@@ -45,7 +45,7 @@
         </div>
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">작성</button>
+            <a href="{% url 'contents:postComment' %}"><button class="button is-link">작성</button></a>
           </div>
 
         </div>
@@ -70,6 +70,7 @@
           </div>
         {% endfor %}       
        </div>
+
         <!-- Comment View END -->
       </div>
     </div>
