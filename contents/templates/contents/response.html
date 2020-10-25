@@ -47,21 +47,30 @@
           <div class="control">
             <a href="{% url 'contents:postComment' %}"><button class="button is-link">작성</button></a>
           </div>
-          <div class="control">
-            <a><button class="button is-link">댓글보기</button></a>
-          </div>
+
         </div>
         <!-- Comment Write END -->
-        <!-- Comment View -->
-        <div>
-          {% for list in listVar %}
-            <div class="card">
-              <div class="card-content">
-                <p>{{ list }}</p>
-              </div>
+       <!-- Comment View -->
+       <div style="overflow:auto; height:150px;">
+        {% for list in listVar %}
+          <div class="card">
+            <div class="card-content">
+              <p>{{list}}</p>
             </div>
-          {% endfor %}       
-         </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p>{{list}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p>{{list}}</p>
+            </div>
+          </div>
+        {% endfor %}       
+       </div>
+
         <!-- Comment View END -->
       </div>
     </div>

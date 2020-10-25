@@ -32,6 +32,7 @@ def show(request, id):
         }
     return render(request, 'contents/response.html', content)
 
+
 def postComment(request, id):
     
     return redirect("{% url 'contents:show' id %}")
