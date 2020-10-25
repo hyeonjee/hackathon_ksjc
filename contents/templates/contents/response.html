@@ -18,7 +18,7 @@
 
 
 <!-- card -->
-<div class="container is-max-desktop">
+<div class="container is-max-desktop" style='bottom: 30px;'>
   <div class="card" style='width:400px; margin:0 auto;'>
     <div class="card-image">
       <figure class="image">
@@ -51,8 +51,8 @@
         </div>
         <!-- Comment Write END -->
        <!-- Comment View -->
+       {% for list in listVar %}
        <div style="overflow:auto; height:150px;">
-        {% for list in listVar %}
           <div class="card">
             <div class="card-content">
               <p>{{list}}</p>
@@ -68,7 +68,10 @@
               <p>{{list}}</p>
             </div>
           </div>
-        {% endfor %}       
+          {% endfor %}
+          {% if list not in listVar %}
+          
+        {% endif %}
        </div>
 
         <!-- Comment View END -->
