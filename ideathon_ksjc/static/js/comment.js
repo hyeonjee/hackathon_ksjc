@@ -16,7 +16,7 @@ $(function() {
                 'message': message,
             },
             success: function (response) {
-                // window.location.reload();
+                //window.location.reload();
                 const { content, message } = response;
                 $('.comment-list').append(`
                     <li>\
@@ -25,6 +25,7 @@ $(function() {
                 `);
                 $(`#comment-input-${contentIdentity}`).val('');
                 //console.log("success ajax");
+                //ajax를 사용해서 api 통신을 시도했으나, 외부로 빼는 것에 실패했다는 의미로 받아들임.
                 //console.log("response data", response);
 
             }

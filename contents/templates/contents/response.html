@@ -1,55 +1,66 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- CSS Effect -->
+
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
-<!-- margin-top -->
 <div class="response-container">
   <a href="{% url 'landing' %}" style="text-decoration: none;"><h1>Home</h1></a>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+<!-- margin-top -->
+
+<br>
+<br>
 
 <!-- card -->
-
 <div class="container is-max-desktop">
   <div class="card" style='width:400px; margin:0 auto;'>
     <div class="card-image">
       <figure class="image">
-        <img src="{{ img }}" alt="Attraction image">
+        <img src="{{ contents.img }}" alt="Attraction image">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{ name }}</p>
-          <p class="subtitle is-6">{{ place }}</p>
+          <p class="title is-4">{{ contents.name }}</p>
+          <p class="subtitle is-6">{{ contents.place }}</p>
         </div>
       </div>
       <div class="content">
-        {{ explanation }}
+        {{ contents.explanation }}
+      </div>
+      <div class="comment">
+        <!-- Comment Write -->
+        <div class="field">
+          <label class="label">댓글</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="댓글을 작성해주세요.">
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">작성</button>
+          </div>
+          <div class="control">
+            <a><button class="button is-link">댓글보기</button></a>
+          </div>
+        </div>
+        <!-- Comment Write END -->
+        <!-- Comment View -->
+        <div>
+           {{ commentsList.listVar }}
+        </div>
+        <!-- Comment View END -->
       </div>
     </div>
-    <!-- 댓글 -->    
-    <form action="#" method="POST">
-      {% csrf_token %}
-      <textarea id="comment-input-{{identity}}" class="form-control col-ll mr-2" name="content" placeholder="댓글 내용 입력"></textarea>
-      <input type="submit" data-token="{{ csrf_token }}" data-content-identity="{{ identity }}" data-content-object="{{ data }}" class="btn btn-primary create-comment-button" value="확인">
-    </form>
-    <div class="comment-list">
-      {% for comment in comments %}
-        <li>
-          {{ message }}
-        </li>
-      {% endfor %}
-    </div>  </div>
+  </div>
 </div>
+
 <!-- floating button -->
 
 <a href="{% url 'contents:contents' %}">
