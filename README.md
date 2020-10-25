@@ -21,7 +21,7 @@ Following items are core backend technologies used in this project:
 
 ## Figure
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02977e68-511d-4155-9c7f-e5f0beb3185d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02977e68-511d-4155-9c7f-e5f0beb3185d/Untitled.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02977e68-511d-4155-9c7f-e5f0beb3185d/Untitled.png](image)
 
 ## Point
 
