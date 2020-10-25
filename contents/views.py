@@ -30,3 +30,6 @@ def show(request):
             'listVar':comments
         }
     return render(request, 'contents/response.html', {'contents':content, 'commentsList':commentsList})
+
+def postComment(request, text):
+    '''TBD'''
