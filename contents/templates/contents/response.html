@@ -35,21 +35,25 @@
       <div class="content">
         {{ explanation }}
       </div>
-      <div class="comment">
-        <!-- Comment Write -->
-        <div class="field">
-          <label class="label">댓글</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="댓글을 작성해주세요.">
+      <!-- Comment Write -->
+      <div>
+        <form name="comment" action="{% url 'contents:postComment' %}" method="get">
+          <div class="field">
+            <label class="label">댓글</label>
+            <div class="control">
+              <input name="q" type="text" class="input" placeholder="댓글을 작성해주세요.">
+            </div>
+            <div class="control" style="display:none">
+              <input name="p" type="text" class="input" placeholder="댓글을 작성해주세요." value=3>
+            </div>
           </div>
-        </div>
-        <div class="field is-grouped">
-          <div class="control">
-            <a href="{% url 'contents:postComment' %}"><button class="button is-link">작성</button></a>
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">작성</button>
+            </div>
           </div>
-
-        </div>
-        <!-- Comment Write END -->
+        </form>
+       <!-- Comment Write End -->
        <!-- Comment View -->
        <div style="overflow:auto; height:150px;">
         {% for list in listVar %}
@@ -70,8 +74,7 @@
           </div>
         {% endfor %}       
        </div>
-
-        <!-- Comment View END -->
+       <!-- Comment View End -->
       </div>
     </div>
   </div>
