@@ -20,7 +20,8 @@ def show(request, id):
         identity = data['identity']
         attr_name = data['attraction']
         attr_img = data['image'][0]['url']
-        attr_explain = data['explanation']
+        place = data['place']
+        explanation = data['explanation']
         if 'Comment' in data:
             comments = data['Comment'] # This is comments(list)
         else : 
@@ -31,8 +32,8 @@ def show(request, id):
             'name':attr_name,
             'identity': identity,
             'img':attr_img,
-            'place':'실내3층',#dump1
-            'explanation':attr_explain,
+            'place':place,#dump1
+            'explanation': explanation, #dump2
             'listVar':comments 
         }
     return render(request, 'contents/response.html', content)
