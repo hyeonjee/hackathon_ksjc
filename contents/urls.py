@@ -5,4 +5,5 @@ app_name = "contents"
 
 urlpatterns = [
     path('', show, name="contents"),
+    path('', postComment, name="postComment"),
 ]
