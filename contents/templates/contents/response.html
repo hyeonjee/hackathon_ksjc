@@ -21,18 +21,18 @@
   <div class="card" style='width:400px; margin:0 auto;'>
     <div class="card-image">
       <figure class="image">
-        <img src="{{ contents.img }}" alt="Attraction image">
+        <img src="{{ img }}" alt="Attraction image">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{ contents.name }}</p>
-          <p class="subtitle is-6">{{ contents.place }}</p>
+          <p class="title is-4">{{ name }}</p>
+          <p class="subtitle is-6">{{ place }}</p>
         </div>
       </div>
       <div class="content">
-        {{ contents.explanation }}
+        {{ explanation }}
       </div>
       <div class="comment">
         <!-- Comment Write -->
@@ -44,7 +44,7 @@
         </div>
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link" onclick="location.href='{% url 'customeroverview' %}'">작성</button>
+            <button class="button is-link">작성</button>
           </div>
           <div class="control">
             <a><button class="button is-link">댓글보기</button></a>
@@ -53,8 +53,10 @@
         <!-- Comment Write END -->
         <!-- Comment View -->
         <div>
-           {{ commentsList.listVar }}
-        </div>
+          {% for list in listVar %}
+            {{list}}
+          {% endfor %}       
+         </div>
         <!-- Comment View END -->
       </div>
     </div>
