@@ -45,7 +45,7 @@
         </div>
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">작성</button>
+            <a href="{% url 'contents:postComment' %}"><button class="button is-link">작성</button></a>
           </div>
           <div class="control">
             <a><button class="button is-link">댓글보기</button></a>
@@ -55,7 +55,11 @@
         <!-- Comment View -->
         <div>
           {% for list in listVar %}
-            {{list}}
+            <div class="card">
+              <div class="card-content">
+                <p>{{ list }}</p>
+              </div>
+            </div>
           {% endfor %}       
          </div>
         <!-- Comment View END -->
