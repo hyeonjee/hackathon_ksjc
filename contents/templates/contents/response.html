@@ -44,7 +44,7 @@
               <input name="q" type="text" class="input" placeholder="댓글을 작성해주세요.">
             </div>
             <div class="control" style="display:none">
-              <input name="p" type="text" class="input" placeholder="댓글을 작성해주세요." value=3>
+              <input name="p" type="text" class="input" placeholder="댓글을 작성해주세요." value={{identity}}>
             </div>
           </div>
           <div class="field is-grouped">
@@ -82,7 +82,10 @@
 
 <!-- floating button -->
 
-<a href="{% url 'contents:show' 1 %}">
+<form action="{% url 'contents:show' 1 %}">
+  <div class="control" style="display:none">
+    <input name="value" type="text" class="input" placeholder="댓글을 작성해주세요." value="999">
+  </div>
   <button class="button is-warning floating" 
           style="position:fixed;
                 width:60px;
@@ -94,7 +97,7 @@
                 box-shadow: 2px 2px 3px #999;">
       <img src="{% static 'images/reload.svg' %}">
     </button>
-</a>
+  </form>
 
 
 
