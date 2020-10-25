@@ -11,6 +11,10 @@ def show(request, id):
         datas = datas.json()
         # make random variable
         num = id
+        # check    
+        if 'value' in request.GET:
+            if request.GET.get('value')=='999':
+                num = random.randint(0,51)
         # handle structure
         data = datas['records'][num]['fields']
         identity = data['identity']
@@ -35,6 +39,7 @@ def show(request, id):
     return render(request, 'contents/response.html', content)
 
 
-def postComment(request, id):
-    
-    return redirect("{% url 'contents:show' id %}")
+def postComment(request):
+    comment = request.GET.get('q')
+    id = request.GET.get('p')
+    return redirect('contents:show', id)
