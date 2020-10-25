@@ -16,6 +16,8 @@ def show(request, id):
         identity = data['identity']
         attr_name = data['attraction']
         attr_img = data['image'][0]['url']
+        place = data['place']
+        explanation = data['explanation']
         if 'Comment' in data:
             comments = data['Comment'] # This is comments(list)
         else : 
@@ -26,8 +28,8 @@ def show(request, id):
             'name':attr_name,
             'identity': identity,
             'img':attr_img,
-            'place':'실내3층',#dump1
-            'explanation':'대한민국의 국민이 되는 요건은 법률로 정한다. 모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.', #dump2
+            'place':place,#dump1
+            'explanation': explanation, #dump2
             'listVar':comments 
         }
     return render(request, 'contents/response.html', content)
