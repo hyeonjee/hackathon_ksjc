@@ -33,5 +33,6 @@ def show(request, id):
        
     return render(request, 'contents/response.html', content)
 
-def postComment(request, text):
+def postComment(request):
     '''TBD'''
+

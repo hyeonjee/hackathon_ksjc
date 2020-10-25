@@ -47,17 +47,29 @@
           <div class="control">
             <button class="button is-link">작성</button>
           </div>
-          <div class="control">
-            <a><button class="button is-link">댓글보기</button></a>
-          </div>
+
         </div>
         <!-- Comment Write END -->
-        <!-- Comment View -->
-        <div>
-          {% for list in listVar %}
-            {{list}}
-          {% endfor %}       
-         </div>
+       <!-- Comment View -->
+       <div style="overflow:auto; height:150px;">
+        {% for list in listVar %}
+          <div class="card">
+            <div class="card-content">
+              <p>{{list}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p>{{list}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <p>{{list}}</p>
+            </div>
+          </div>
+        {% endfor %}       
+       </div>
         <!-- Comment View END -->
       </div>
     </div>
